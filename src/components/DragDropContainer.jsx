@@ -43,6 +43,16 @@ const DragDropContainer = () => {
       });
   }, []);
 
+  const handleSaveLayout = () => {
+    const layout = {
+      selectedUsers: selectedUsers.map(user => ({
+        id: user.id,
+        name: user.name
+      }))
+    };
+    console.log(JSON.stringify(layout, null, 2));
+  };
+
   const handleDragStart = (event) => {
     setActiveId(event.active.id);
   };
@@ -114,6 +124,14 @@ const DragDropContainer = () => {
             users={selectedUsers}
             className="bg-green-50 border-green-200"
           />
+        </div>
+          <div className="mt-6 flex justify-end">
+          <button
+            onClick={handleSaveLayout}
+            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+          >
+            Save Layout
+          </button>
         </div>
       </div>
 
