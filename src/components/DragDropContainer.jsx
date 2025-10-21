@@ -53,6 +53,11 @@ const DragDropContainer = () => {
     console.log(JSON.stringify(layout, null, 2));
   };
 
+  const handleReset = () => {
+    setAvailableUsers(prev => [...prev, ...selectedUsers]);
+    setSelectedUsers([]);
+  };
+
   const handleDragStart = (event) => {
     setActiveId(event.active.id);
   };
@@ -125,7 +130,13 @@ const DragDropContainer = () => {
             className="bg-green-50 border-green-200"
           />
         </div>
-          <div className="mt-6 flex justify-end">
+          <div className="mt-6 flex justify-end gap-4">
+          <button
+            onClick={handleReset}
+            className="px-6 py-2 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition-colors duration-200 shadow-md hover:shadow-lg"
+          >
+            Reset
+          </button>
           <button
             onClick={handleSaveLayout}
             className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors duration-200 shadow-md hover:shadow-lg"
