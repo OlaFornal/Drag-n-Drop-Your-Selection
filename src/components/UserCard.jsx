@@ -7,13 +7,15 @@ const UserCard = ({ user, isDragging = false }) => {
     listeners,
     setNodeRef,
     transform,
+    isDragging: isBeingDragged,
   } = useDraggable({
     id: user.id.toString(),
   });
 
-  const style = transform ? {
-    transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
-  } : undefined;
+  const style = {
+    transform: transform ? `translate3d(${transform.x}px, ${transform.y}px, 0)` : undefined,
+    opacity: isBeingDragged ? 0 : 1,
+  };
 
   return (
     <div
@@ -24,7 +26,6 @@ const UserCard = ({ user, isDragging = false }) => {
       className={`
         p-4 mb-3 bg-white rounded-lg border-2 border-gray-200 shadow-sm cursor-grab
         hover:shadow-md hover:border-gray-300 transition-all duration-200
-        ${isDragging ? 'opacity-50 cursor-grabbing' : ''}
         active:cursor-grabbing
       `}
     >
