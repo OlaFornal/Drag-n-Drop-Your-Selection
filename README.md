@@ -28,19 +28,25 @@ When a user drags a card from one list to another, the `handleDragEnd` function 
 - Reset button to restore all users to the Available list
 - Responsive design with Tailwind CSS
 
-## Running the Project Locally
+### Installation
 
-1. Install dependencies:
-   ```bash
-   npm install
-   ```
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd Drag-n-Drop-Your-Selection
+```
 
-2. Start the development server:
-   ```bash
-   npm start
-   ```
+2. Install dependencies:
+```bash
+npm install
+```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+3. Start the development server:
+```bash
+npm start
+```
+
+The app will open at [http://localhost:3000](http://localhost:3000)
 
 The page will reload when you make changes.
 # Drag-n-Drop-Your-Selection
